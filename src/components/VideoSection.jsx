@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ReactPlayer from 'react-player';
 import { Play, X, CircleAlert as AlertCircle } from 'lucide-react';
 import './VideoSection.css';
 
@@ -27,11 +26,19 @@ function VideoSection() {
     }
   ];
 
+  const getVideoId = (url) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
   const openVideo = (video) => {
     setSelectedVideo(video);
     setIsLoading(true);
     setHasError(false);
     document.body.style.overflow = 'hidden';
+    // Video will load automatically via iframe
+    setTimeout(() => setIsLoading(false), 500);
   };
 
   const closeVideo = () => {
@@ -39,15 +46,6 @@ function VideoSection() {
     setIsLoading(false);
     setHasError(false);
     document.body.style.overflow = 'auto';
-  };
-
-  const handleReady = () => {
-    setIsLoading(false);
-  };
-
-  const handleError = () => {
-    setIsLoading(false);
-    setHasError(true);
   };
 
   useEffect(() => {
@@ -141,7 +139,22 @@ function VideoSection() {
                   <div className="video-spinner" aria-label="Loading video"></div>
                 </div>
               )}
-              {hasError ? (
+              {selectedVideo && (
+                <iframe
+                  src={`https://www.youtube.com/embed/${getVideoId(selectedVideo.url)}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+                  title={selectedVideo.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="youtube-iframe"
+                  onLoad={() => setIsLoading(false)}
+                  onError={() => {
+                    setIsLoading(false);
+                    setHasError(true);
+                  }}
+                />
+              )}
+              {hasError && (
                 <div className="video-error">
                   <AlertCircle className="video-error-icon" />
                   <h3 className="video-error-title">Unable to Load Video</h3>
@@ -149,28 +162,6 @@ function VideoSection() {
                     Please check your internet connection or try again later.
                   </p>
                 </div>
-              ) : (
-                <ReactPlayer
-                  url={selectedVideo.url}
-                  width="100%"
-                  height="100%"
-                  playing={true}
-                  controls={true}
-                  onReady={handleReady}
-                  onError={handleError}
-                  pip={false}
-                  stopOnUnmount={false}
-                  config={{
-                    youtube: {
-                      playerVars: {
-                        autoplay: 1,
-                        modestbranding: 1,
-                        rel: 0,
-                        enablejsapi: 1
-                      }
-                    }
-                  }}
-                />
               )}
             </div>
           </div>

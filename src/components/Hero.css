@@ -1,5 +1,6 @@
 .hero {
   min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -10,6 +11,7 @@
   padding: 100px 0 80px;
   position: relative;
   margin-top: 0;
+  overflow: hidden;
 }
 
 .hero::before {
@@ -27,15 +29,17 @@
   align-items: flex-end;
   justify-content: center;
   max-width: 600px;
+  width: auto;
   margin-right: 100px;
   position: relative;
   z-index: 10;
   text-align: right;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   padding: 48px;
   border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
@@ -70,8 +74,12 @@
   .hero-content {
     gap: 24px;
     max-width: 500px;
+    width: auto;
     margin-right: 40px;
     padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
 
   .hero-title {
@@ -86,13 +94,13 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
+    height: 100vh;
     padding: 100px 0 80px;
     justify-content: flex-end;
     background-attachment: scroll;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: #000;
   }
 
   .hero::before {
@@ -101,10 +109,14 @@
 
   .hero-content {
     margin-right: 20px;
-    max-width: 90%;
+    max-width: calc(100% - 40px);
+    width: auto;
     align-items: flex-end;
     text-align: right;
     padding: 32px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
 
   .hero-title {

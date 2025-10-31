@@ -11,11 +11,13 @@
 }
 
 .header.scrolled {
-  background: rgba(255, 248, 240, 0.98);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 248, 240, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   padding: 12px 0;
   color: var(--text-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-content {
