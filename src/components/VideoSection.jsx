@@ -72,7 +72,12 @@ function VideoSection() {
         <p className="section-subtitle">Watch inspiring content and highlights from our activities</p>
 
         <div className="videos-grid">
-          {videos.map((video) => (
+          {videos.map((video) => {
+            const videoId = getVideoId(video.url);
+            const primaryThumb = videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
+            const fallbackThumb = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
+            const sdThumb = videoId ? `https://img.youtube.com/vi/${videoId}/sddefault.jpg` : '';
+            return (
             <div
               key={video.id}
               className="video-card"
@@ -88,31 +93,31 @@ function VideoSection() {
               aria-label={`Play video: ${video.title}`}
             >
               <div className="video-thumbnail">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  loading="eager"
-                  onError={(e) => {
-                    if (e.target.src !== video.thumbnailFallback) {
-                      e.target.src = video.thumbnailFallback;
-                    } else {
-                      // If fallback also fails, try SD thumbnail
-                      const videoId = getVideoId(video.url);
-                      if (videoId) {
-                        e.target.src = `https://img.youtube.com/vi/${videoId}/sddefault.jpg`;
+                {videoId ? (
+                  <img
+                    src={primaryThumb}
+                    alt={video.title}
+                    loading="eager"
+                    onError={(e) => {
+                      if (e.target.src !== fallbackThumb) {
+                        e.target.src = fallbackThumb;
+                      } else if (e.target.src !== sdThumb) {
+                        e.target.src = sdThumb;
                       }
-                    }
-                  }}
-                  onLoad={(e) => {
-                    e.target.style.opacity = '1';
-                    e.target.style.display = 'block';
-                  }}
-                  style={{ 
-                    opacity: 1, 
-                    display: 'block',
-                    transition: 'opacity 0.3s ease' 
-                  }}
-                />
+                    }}
+                    onLoad={(e) => {
+                      e.target.style.opacity = '1';
+                      e.target.style.display = 'block';
+                    }}
+                    style={{ 
+                      opacity: 1, 
+                      display: 'block',
+                      transition: 'opacity 0.3s ease' 
+                    }}
+                  />
+                ) : (
+                  <div style={{width:'100%',height:'100%',background:'#111',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontSize:'0.9rem'}}>Thumbnail unavailable</div>
+                )}
                 <div className="video-play-overlay">
                   <div className="play-button" aria-hidden="true">
                     <Play />
@@ -124,7 +129,7 @@ function VideoSection() {
                 <p className="video-description">{video.description}</p>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
 
