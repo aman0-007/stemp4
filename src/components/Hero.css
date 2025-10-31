@@ -109,34 +109,28 @@
   .hero {
     min-height: auto;
     height: auto;
-    padding: 32px 0 16px;
+    padding: 0;
     justify-content: flex-start;
     align-items: flex-start;
-    background-attachment: scroll;
-    background-size: contain;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: #000;
+    background: none;
   }
 
   .hero::before {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.5) 100%);
   }
 
-  .hero {
-    background-image: url('../assets/hero.jpg');
-    background-size: contain;
-  }
-
   .hero-image {
-    display: none;
+    display: block;
     width: 100%;
     height: auto;
   }
 
   .hero-content {
-    margin-left: auto;
-    margin-right: 12px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    left: auto;
+    margin: 0;
     max-width: none;
     width: 80%;
     align-items: flex-start;
