@@ -91,12 +91,22 @@ function VideoSection() {
                 <img
                   src={video.thumbnail}
                   alt={video.title}
-                  loading="lazy"
+                  loading="eager"
                   onError={(e) => {
                     if (e.target.src !== video.thumbnailFallback) {
                       e.target.src = video.thumbnailFallback;
+                    } else {
+                      // If fallback also fails, try SD thumbnail
+                      const videoId = getVideoId(video.url);
+                      if (videoId) {
+                        e.target.src = `https://img.youtube.com/vi/${videoId}/sddefault.jpg`;
+                      }
                     }
                   }}
+                  onLoad={(e) => {
+                    e.target.style.opacity = '1';
+                  }}
+                  style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
                 />
                 <div className="video-play-overlay">
                   <div className="play-button" aria-hidden="true">
