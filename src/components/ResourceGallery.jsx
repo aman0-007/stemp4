@@ -136,10 +136,20 @@ function ResourceGallery() {
               </div>
             </div>
             <div className="preview-body">
-              <div className="preview-placeholder">
-                <p>Preview functionality will be implemented with actual file URLs</p>
-                <p className="preview-note">File Type: {previewItem.type.toUpperCase()}</p>
-              </div>
+              {previewItem.url && previewItem.type === 'pdf' ? (
+                <div style={{ width: '100%', height: '70vh' }}>
+                  <iframe
+                    src={`${previewItem.url}#toolbar=1&navpanes=0&scrollbar=1`}
+                    title={previewItem.title}
+                    style={{ width: '100%', height: '100%', border: 'none', background: '#fff' }}
+                  />
+                </div>
+              ) : (
+                <div className="preview-placeholder">
+                  <p>Preview is unavailable for this item. You can download it instead.</p>
+                  <p className="preview-note">File Type: {previewItem.type.toUpperCase()}</p>
+                </div>
+              )}
             </div>
             <div className="preview-footer">
               <button
