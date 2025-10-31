@@ -53,7 +53,7 @@
 .hero-text {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 }
 
 .hero-title {
@@ -109,7 +109,7 @@
   .hero {
     min-height: auto;
     height: auto;
-    padding: 60px 0 30px;
+    padding: 32px 0 16px;
     justify-content: flex-start;
     align-items: flex-start;
     background-attachment: scroll;
@@ -123,6 +123,17 @@
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.5) 100%);
   }
 
+  .hero {
+    background-image: url('../assets/hero.jpg');
+    background-size: contain;
+  }
+
+  .hero-image {
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
   .hero-content {
     margin-left: auto;
     margin-right: 12px;
@@ -131,7 +142,7 @@
     align-items: flex-start;
     text-align: left;
     padding: 12px 10px;
-    gap: 8px;
+    gap: 6px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);

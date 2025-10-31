@@ -27,7 +27,7 @@ function Footer() {
             <ul className="footer-contact">
               <li>
                 <MapPin size={18} />
-                <span>Maharashtra West 1 Region</span>
+                <span>Dharmakshetra, Mahakali Caves Rd, Andheri East, Mumbai, Maharashtra</span>
               </li>
               <li>
                 <Mail size={18} />
@@ -35,7 +35,7 @@ function Footer() {
               </li>
               <li>
                 <Phone size={18} />
-                <span>+91 XXXXX XXXXX</span>
+                <span>+91 9821417213</span>
               </li>
             </ul>
           </div>
