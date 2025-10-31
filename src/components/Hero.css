@@ -85,26 +85,28 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
-    padding: 120px 20px 60px;
-    justify-content: center;
-    background-attachment: scroll;
+    min-height: 100vh;
+    padding: 100px 0 80px;
+    justify-content: flex-end;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 
   .hero::before {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.6) 100%);
   }
 
   .hero-content {
-    margin-right: 0;
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
+    margin-right: 20px;
+    max-width: 90%;
+    align-items: flex-end;
+    text-align: right;
     padding: 32px 24px;
   }
 
   .hero-title {
-    font-size: 1.875rem;
+    font-size: 2rem;
   }
 
   .hero-subtitle {
