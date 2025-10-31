@@ -11,17 +11,19 @@ function VideoSection() {
   const videos = [
     {
       id: 1,
-      url: 'https://youtu.be/x6_JXMj2Dpo',
+      url: 'https://www.youtube.com/watch?v=x6_JXMj2Dpo',
       title: 'Featured Video 1',
       description: 'Watch this inspiring content from our organization',
-      thumbnail: `https://img.youtube.com/vi/x6_JXMj2Dpo/maxresdefault.jpg`
+      thumbnail: `https://img.youtube.com/vi/x6_JXMj2Dpo/maxresdefault.jpg`,
+      thumbnailFallback: `https://img.youtube.com/vi/x6_JXMj2Dpo/hqdefault.jpg`
     },
     {
       id: 2,
-      url: 'https://youtu.be/xX5g6GiyQRw',
+      url: 'https://www.youtube.com/watch?v=xX5g6GiyQRw',
       title: 'Featured Video 2',
       description: 'Watch this inspiring content from our organization',
-      thumbnail: `https://img.youtube.com/vi/xX5g6GiyQRw/maxresdefault.jpg`
+      thumbnail: `https://img.youtube.com/vi/xX5g6GiyQRw/maxresdefault.jpg`,
+      thumbnailFallback: `https://img.youtube.com/vi/xX5g6GiyQRw/hqdefault.jpg`
     }
   ];
 
@@ -92,6 +94,11 @@ function VideoSection() {
                   src={video.thumbnail}
                   alt={video.title}
                   loading="lazy"
+                  onError={(e) => {
+                    if (e.target.src !== video.thumbnailFallback) {
+                      e.target.src = video.thumbnailFallback;
+                    }
+                  }}
                 />
                 <div className="video-play-overlay">
                   <div className="play-button" aria-hidden="true">
@@ -151,12 +158,15 @@ function VideoSection() {
                   controls={true}
                   onReady={handleReady}
                   onError={handleError}
+                  pip={false}
+                  stopOnUnmount={false}
                   config={{
                     youtube: {
                       playerVars: {
                         autoplay: 1,
                         modestbranding: 1,
-                        rel: 0
+                        rel: 0,
+                        enablejsapi: 1
                       }
                     }
                   }}
