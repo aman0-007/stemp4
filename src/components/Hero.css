@@ -107,9 +107,9 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 70vh;
+    min-height: auto;
     height: auto;
-    padding: 60px 0 30px;
+    padding: 60px 0 0;
     justify-content: flex-start;
     align-items: flex-start;
     background-image: url('../assets/hero.jpg');
