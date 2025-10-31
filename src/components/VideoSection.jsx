@@ -105,8 +105,13 @@ function VideoSection() {
                   }}
                   onLoad={(e) => {
                     e.target.style.opacity = '1';
+                    e.target.style.display = 'block';
                   }}
-                  style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
+                  style={{ 
+                    opacity: 1, 
+                    display: 'block',
+                    transition: 'opacity 0.3s ease' 
+                  }}
                 />
                 <div className="video-play-overlay">
                   <div className="play-button" aria-hidden="true">

@@ -1,6 +1,6 @@
 .hero {
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 70vh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -8,7 +8,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 100px 0 80px;
+  padding: 80px 0 60px;
   position: relative;
   margin-top: 0;
   overflow: hidden;
@@ -25,10 +25,10 @@
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   align-items: flex-end;
   justify-content: center;
-  max-width: 600px;
+  max-width: 500px;
   width: auto;
   margin-right: 100px;
   position: relative;
@@ -37,8 +37,8 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  padding: 48px;
-  border-radius: 24px;
+  padding: 32px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
@@ -54,7 +54,7 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: white;
   line-height: 1.2;
@@ -63,39 +63,45 @@
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.95);
-  line-height: 1.7;
+  line-height: 1.6;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3);
   font-weight: 400;
 }
 
 @media (max-width: 1024px) {
+  .hero {
+    min-height: 65vh;
+    height: 65vh;
+    padding: 70px 0 50px;
+  }
+
   .hero-content {
-    gap: 24px;
-    max-width: 500px;
+    gap: 18px;
+    max-width: 450px;
     width: auto;
     margin-right: 40px;
-    padding: 40px;
+    padding: 28px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .hero-subtitle {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 100vh;
-    height: 100vh;
-    padding: 100px 0 80px;
+    min-height: 60vh;
+    height: 60vh;
+    padding: 80px 0 50px;
     justify-content: flex-end;
     background-attachment: scroll;
     background-size: cover;
@@ -113,17 +119,18 @@
     width: auto;
     align-items: flex-end;
     text-align: right;
-    padding: 32px 24px;
+    padding: 24px 20px;
+    gap: 16px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
