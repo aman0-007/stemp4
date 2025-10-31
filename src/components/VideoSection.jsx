@@ -10,7 +10,7 @@ function VideoSection() {
   const videos = [
     {
       id: 1,
-      url: 'https://www.youtube.com/watch?v=x6_JXMj2Dpo',
+      url: 'https://www.youtube.com/embed/x6_JXMj2Dpo?si=HJRbSPIrbxNqqXC1',
       title: 'Community Seva Activities',
       description: 'Highlights from our recent community service initiatives',
       thumbnail: `https://img.youtube.com/vi/x6_JXMj2Dpo/maxresdefault.jpg`,
@@ -18,7 +18,7 @@ function VideoSection() {
     },
     {
       id: 2,
-      url: 'https://www.youtube.com/watch?v=xX5g6GiyQRw',
+      url: 'https://www.youtube.com/embed/xX5g6GiyQRw?si=QQITU4rbdTz4DH55',
       title: 'Sri Sathya Sai Baba Teachings',
       description: 'Inspirational discourse on love, service, and spiritual growth',
       thumbnail: `https://img.youtube.com/vi/xX5g6GiyQRw/maxresdefault.jpg`,
