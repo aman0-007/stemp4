@@ -11,17 +11,17 @@ function VideoSection() {
   const videos = [
     {
       id: 1,
-      url: 'https://youtu.be/xX5g6GiyQRw',
-      title: 'Sri Sathya Sai Baba Teachings',
-      description: 'Inspirational discourse on love, service, and spiritual growth',
-      thumbnail: `https://img.youtube.com/vi/xX5g6GiyQRw/maxresdefault.jpg`
+      url: 'https://youtu.be/x6_JXMj2Dpo',
+      title: 'Featured Video 1',
+      description: 'Watch this inspiring content from our organization',
+      thumbnail: `https://img.youtube.com/vi/x6_JXMj2Dpo/maxresdefault.jpg`
     },
     {
       id: 2,
-      url: 'https://youtu.be/x6_JXMj2Dpo',
-      title: 'Community Seva Activities',
-      description: 'Highlights from our recent community service initiatives',
-      thumbnail: `https://img.youtube.com/vi/x6_JXMj2Dpo/maxresdefault.jpg`
+      url: 'https://youtu.be/xX5g6GiyQRw',
+      title: 'Featured Video 2',
+      description: 'Watch this inspiring content from our organization',
+      thumbnail: `https://img.youtube.com/vi/xX5g6GiyQRw/maxresdefault.jpg`
     }
   ];
 
