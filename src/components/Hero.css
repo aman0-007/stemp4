@@ -107,12 +107,16 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
+    min-height: 70vh;
     height: auto;
-    padding: 0;
+    padding: 60px 0 30px;
     justify-content: flex-start;
     align-items: flex-start;
-    background: none;
+    background-attachment: scroll;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #000;
   }
 
   .hero::before {
@@ -120,17 +124,12 @@
   }
 
   .hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
+    display: none;
   }
 
   .hero-content {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    left: auto;
-    margin: 0;
+    margin-left: auto;
+    margin-right: 12px;
     max-width: none;
     width: 80%;
     align-items: flex-start;
