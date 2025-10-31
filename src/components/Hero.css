@@ -109,7 +109,7 @@
   .hero {
     min-height: auto;
     height: auto;
-    padding: 60px 0 0;
+    padding: 80px 0 12px;
     justify-content: flex-start;
     align-items: flex-start;
     background-image: url('../assets/hero.jpg');
