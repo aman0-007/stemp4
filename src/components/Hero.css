@@ -1,6 +1,6 @@
 .hero {
-  min-height: 95vh;
-  height: 95vh;
+  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -103,14 +103,15 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 60vh;
-    height: 60vh;
+    min-height: 50vh;
+    height: 50vh;
     padding: 80px 0 50px;
     justify-content: flex-end;
     background-attachment: scroll;
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    background-color: #000;
   }
 
   .hero::before {
